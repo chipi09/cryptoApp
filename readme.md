@@ -6,8 +6,6 @@ pip install -r requerimientos.txt
 ```
 Ejecutar el script `\env\Scripts\activate`
 
-ponerse en la ruta `\env`
-
 Ejecutar la instrucción `flask run` 
 
 # Tablas utilizadas
