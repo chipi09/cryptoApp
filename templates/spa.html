@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+    <title>CryptoApp</title>
+    <head>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+      <link rel="stylesheet" href="static/css/styles.css">
+      <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+      <script src="static/js/spa.js"></script>
+    </head>
+    <body>
+      <nav class="navbar navbar-light">
+        <a class="navbar-brand mb-0 h1">myCrypto</a>
+      </nav>
+      <div class="col-xl-12">
+        <div class="row row-table">
+          <table class="col-xl-10 table table-xl table-hover text-center mt-2 tabla-scroll">
+            <thead class="thead-dark">
+              <tr class="filters">
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>From</th>
+                <th>Cantidad</th>
+                <th>To</th>
+                <th>Cantidad</th>
+              </tr>
+            </thead>
+            <tbody id="table-body">
+            </tbody>        
+          </table>
+          <div class="col-xl-1 mt-3 ml-3">
+            <p><span>Invertido: </span><span id="span-invertido"></span>€</p>
+            <p><span>Valor: </span><span id="span-valor"></span>€</p>
+            <p><span>Resultado: </span><span id="span-resultado"></span></p>
+            <button type="button" class="btn btn-secondary btn-status" onclick="llamadaStatus()">Actualizar Estado de la Inversion</button>
+            <button type="button" class="btn btn-primary btn-mas mt-2" onclick="activarFormulario()"><i class="fas fa-plus"></i></button>
+            <div class="mt-2">
+              <span>Limite diario: </span>
+              <span id="span-llamadas-dia"></span> / <span id="span-limite-llamadas-dia"></span>
+              <br>
+              <span>Limite mensual: </span>
+              <span id="span-llamadas-mes"></span> / <span id="span-limite-llamadas-mes"></span>
+            </div>
+          </div>
+        </div>
+        <form id="formulario">
+          <div class="form-group">
+            <div class="row">
+              <div class="col-xl-3 offset-xl-2">
+                <label id="label-select-from">From: </label>
+                <select id="select-from-moneda" class="form-control form-control-sm" disabled>
+                  <option value="EUR">Euros</option>
+                  <option value="BTC">Bitcoin</option>
+                  <option value="ETH">Ethereum</option>
+                  <option value="XRP">Ripple</option>
+                  <option value="LTC">Litecoin</option>
+                  <option value="BCH">Bitcoin Cash</option>
+                  <option value="BNB">Binance</option>
+                  <option value="USDT">Tether</option>
+                  <option value="EOS">Eos</option>
+                  <option value="BSV">Bitcoin SV</option>
+                  <option value="ADA">Cardano</option>
+                  <option value="TRX">Tron</option>
+                </select>
+              </div>
+              <div class="col-xl-3 offset-xl-1">
+                <label id="label-select-to">To: </label>
+                <select id="select-to-moneda" class="form-control form-control-sm" disabled>
+                  <option value="EUR">Euros</option>
+                  <option value="BTC">Bitcoin</option>
+                  <option value="ETH">Ethereum</option>
+                  <option value="XRP">Ripple</option>
+                  <option value="LTC">Litecoin</option>
+                  <option value="BCH">Bitcoin Cash</option>
+                  <option value="BNB">Binance</option>
+                  <option value="USDT">Tether</option>
+                  <option value="EOS">Eos</option>
+                  <option value="BSV">Bitcoin SV</option>
+                  <option value="ADA">Cardano</option>
+                  <option value="TRX">Tron</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xl-3 offset-xl-2">
+                <label id="label-q-from">Q: </label>
+                <input type="number" class="form-control form-input" id="input-from-cantidad" disabled>
+                <button type="button" class="btn btn-primary" id="btn-convertir-moneda" disabled onclick="llamadaConvertirMoneda()"><i class="fas fa-calculator"></i></button>
+              </div>
+              <div class="col-xl-3 offset-xl-1">
+                <label id="label-q-to">Q: </label>
+                <input type="number" class="form-control form-input" id="input-to-cantidad" readonly disabled>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xl-3 offset-xl-6">
+                <label id="label-pu">P.U:</label>
+                <input type="number" class="form-control form-input" id="input-precio-unitario" readonly disabled>
+              </div>
+            </div>
+            <div class="row row-btn">
+              <div class="col-xl-3 offset-xl-8">
+                <button type="button" class="btn btn-danger" id="btn-cancelar" disabled onclick="cancelarMovimiento()">Cancelar</button>
+                <button type="button" class="btn btn-success" id="btn-llamar-mov" disabled onclick="llamadaMovimiento()">OK</button>
+              </div>
+            </div>            
+          </div>
+        </form>
+      </div>
+      <nav class="navbar navbar-light">
+        <a class="navbar-brand mb-0 h3">© 2021 - Todos los derechos reservados</a>
+      </nav>
+    </body>
+</html>

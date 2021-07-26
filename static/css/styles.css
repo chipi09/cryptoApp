@@ -1,0 +1,98 @@
+.row {
+    display: flex;
+    margin: 2%;
+    margin-top: 2%;
+}
+.col-xl-3 {
+    display: flex;
+}
+input {
+    margin-left: 5%;
+}
+#label-q-from {
+    margin-right: 4%;
+}
+#label-q-to {
+    margin-right: 5%;
+}
+#label-pu {
+    margin-right: 2%;
+}
+#label-select-to {
+    margin-right: 8%;
+}
+#label-select-from {
+    margin-right: 3%;
+}
+button {
+    margin-left: 2%;
+}
+table {
+    height: 380px;
+    border:1px solid black
+}
+
+table.tabla-scroll * {
+    height: auto;
+}
+
+table.tabla-scroll {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border-top: 0 none;
+}
+
+.tabla-scroll thead {
+    background: #212529;
+    text-align: center;
+    z-index: 2;
+}
+
+.tabla-scroll thead tr {
+    text-align: center;
+    z-index: 2;
+}
+
+.tabla-scroll tbody {
+    display: block;
+    height: 380px;
+    overflow-Y: scroll;
+    color: #000;
+}
+
+.tabla-scroll tr {
+    overflow: hidden;
+    display: flex;
+}
+
+.tabla-scroll th, .tabla-scroll td {
+    flex: 100%;
+}
+tr {
+    text-align: center;
+}
+.row-btn {
+    margin-right: 5%;
+}
+.row-table {
+    display: flex;
+}
+.btn-mas {
+    width: 150%;
+}
+.btn-status {
+    width: 150%;
+}
+
+.fila-seleccionada td { 
+    background-color:lightgreen; 
+}
+
+.negativo {
+    color: red;
+}
+
+nav {
+    background-color: darkgray;
+}
